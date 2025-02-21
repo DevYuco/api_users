@@ -1,0 +1,10 @@
+@media (max-width: 992px) {
+    .mt-4{
+        margin-bottom: 100px;
+    }
+}
+@media(max-height: 950px ){
+    .mt-4 {
+            margin-bottom: 70px;
+        }
+}

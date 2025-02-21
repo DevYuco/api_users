@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-around mt-5 border rounded  p-3">
+    @if(parent == 'card'){
+    <a [routerLink]="['/user', id]" class="text-decoration-none text-dark text-center">
+        <i class="fas fa-search fa-lg"></i>
+        <div class="small">Ver detalle</div>
+    </a>
+    }@else if(parent == 'view'){
+    <a [routerLink]="['/home']" class="text-decoration-none text-dark text-center">
+        <i class="fa-solid fa-house"></i>
+        <div class="small">Volver al listado</div>
+    </a>
+    }
+    <a [routerLink]="['/updateuser',id]" class="text-decoration-none text-dark text-center">
+        <i class="fas fa-sync-alt fa-lg"></i>
+        <div class="small">Actualizar</div>
+    </a>
+    <button class="border-0 bg-transparent text-danger text-center" (click)="deleteUser(id)">
+        <i class="fas fa-trash fa-lg"></i>
+        <div class="small">Borrar</div>
+    </button>
+</div>

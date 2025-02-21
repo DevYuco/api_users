@@ -1,0 +1,17 @@
+<section class="container mt-3">
+    <div class="card shadow p-3">
+        <div class="row">
+            <figure class="col-12 col-md-3">
+                <img class="img-fluid rounded-circle shadow" [src]="myUser.image" [alt]="myUser.username">
+            </figure>
+            <div class="col-12 col-md-9  border-start ps-4">
+                <h2 class="card-title fw-semibold">{{myUser.firstName}}</h2>
+                <h2 class="card-title fw-semibold">{{myUser.lastName}}</h2>
+                <br>
+                <p class="card-title  fw-semibold"> <span class="text-success fw-bold">Nombre de usuario:</span> {{myUser.username}}</p>
+                <p class="card-title fw-semibold"> <span class="fw-bold  text-success">Email:</span> {{myUser.email}}</p>
+                <app-botonera [parent]="'view'" [id]="myUser.id"></app-botonera>
+            </div>
+        </div>
+    </div>
+</section>

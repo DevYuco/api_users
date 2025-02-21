@@ -1,0 +1,11 @@
+<div class="card text-center shadow ">
+    <div class="d-flex justify-content-center mt-3">
+        <img [src]="myUser.image" [alt]="myUser.username" class="rounded-circle shadow"
+            style="width: 120px; height: 120px; object-fit: cover;">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title text-success fw-semibold small">{{myUser.firstName}} {{myUser.lastName}}</h5>
+        <app-botonera [id]="myUser.id" [parent]="'card'"></app-botonera>
+    </div>
+    
+</div>
