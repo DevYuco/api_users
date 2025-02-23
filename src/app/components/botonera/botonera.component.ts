@@ -2,6 +2,7 @@ import { Component, inject, Input } from "@angular/core";
 import { UsersService } from "../../services/users.service";
 import { Router, RouterLink } from "@angular/router";
 import Swal from "sweetalert2";
+import { Iuser } from "../../interface/iuser";
 
 @Component({
 	selector: "app-botonera",
@@ -30,7 +31,7 @@ export class BotoneraComponent {
 			cancelButtonColor: "#3085d6",
 		}).then((result) => {
 			if (result.isConfirmed) {
-				this.userService.deleteOne(id).subscribe((data) => {
+				this.userService.deleteOne(id).subscribe((data: Iuser) => {
 					if (data.id) {
 						Swal.fire({
 							icon: "success",

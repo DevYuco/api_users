@@ -31,7 +31,7 @@ export class UsersListComponent {
 	}
 
 	loadUsers() {
-		this.userService.getAll(this.page, this.perPage).subscribe((data) => {
+		this.userService.getAll(this.page, this.perPage).subscribe((data: Iresponse) => {
 			this.arrUsers = data.results;
 			this.page = data.page;
 			this.totalPages = data.total_pages;

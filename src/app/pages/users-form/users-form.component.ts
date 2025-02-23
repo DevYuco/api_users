@@ -66,7 +66,7 @@ export class UsersFormComponent {
 				username: username,
 			});
 
-			this.userService.insertOne(this.userForm.value).subscribe((data) => {
+			this.userService.insertOne(this.userForm.value).subscribe((data: Iuser) => {
 				//confirmaciones con sweetalert2
 				Swal.fire({
 					icon: "success",
@@ -89,7 +89,7 @@ export class UsersFormComponent {
 				username: username,
 			});
 
-			this.userService.updateOne(this.userForm.value).subscribe((data) => {
+			this.userService.updateOne(this.userForm.value).subscribe((data: Iuser) => {
 				//Confirmaciones con sweetalert2
 				Swal.fire({
 					icon: "success",
