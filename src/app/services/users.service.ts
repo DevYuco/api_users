@@ -9,7 +9,9 @@ import { Iresponse } from "../interface/iresponse";
 })
 export class UsersService {
 	httpClient = inject(HttpClient);
+	//URL para probar en local
 	private baseUrl: string = "http://localhost:8085/api/users";
+	//URL de la api de mi  servidor
 	private baseUrlServidor: string = "https://apiusers.matabuena.com/api/users";
 	constructor() {}
 

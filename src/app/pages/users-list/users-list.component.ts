@@ -37,13 +37,14 @@ export class UsersListComponent {
 			this.totalPages = data.total_pages;
 		});
 	}
+	//metodo para pasar de pagina y cargar los usuarios con la paginacion
 	nextPage() {
 		if (this.page < this.totalPages) {
 			this.page++;
 			this.loadUsers();
 		}
 	}
-
+	//metodo para retroceder de pagina y cargar los usuarios con la paginacion
 	prevPage() {
 		if (this.page > 1) {
 			this.page--;

@@ -41,6 +41,7 @@ export class UsersFormComponent {
 				this.tipo = "Actualizar";
 				this.userService.getById(params.id).subscribe((data: Iuser) => {
 					this.userForm.patchValue({
+						//He utilziado patch value para no crear dos new FormGroup
 						id: data.id,
 						firstName: data.firstName,
 						lastName: data.lastName,
@@ -54,10 +55,10 @@ export class UsersFormComponent {
 	//He utulizado sweetalert2 para los mensajes de confirmacion,npm install sweetalert2 y lo importamos
 	getDataForm() {
 		if (this.tipo == "Nuevo") {
-			const firstName = this.userForm.value.firstName.trim();
+			const firstName = this.userForm.value.firstName.trim(); //quitamos espacios
 			const lastName = this.userForm.value.lastName.trim().split(" ")[0]; // Solo el primer apellido
 
-			// Generar username limpio
+			// Generar username limpio sin caracteres ni tildes
 			const username = this.normalizeString(`${firstName}.${lastName}`.toLowerCase());
 
 			// Añadir el username al formulario
@@ -66,6 +67,7 @@ export class UsersFormComponent {
 			});
 
 			this.userService.insertOne(this.userForm.value).subscribe((data) => {
+				//confirmaciones con sweetalert2
 				Swal.fire({
 					icon: "success",
 					title: "Usuario añadido",
@@ -76,7 +78,7 @@ export class UsersFormComponent {
 				});
 			});
 		} else {
-			const firstName = this.userForm.value.firstName.trim();
+			const firstName = this.userForm.value.firstName.trim(); //quitamos espacios
 			const lastName = this.userForm.value.lastName.trim().split(" ")[0]; // Solo el primer apellido
 
 			// Generar username limpio
@@ -86,7 +88,9 @@ export class UsersFormComponent {
 			this.userForm.patchValue({
 				username: username,
 			});
+
 			this.userService.updateOne(this.userForm.value).subscribe((data) => {
+				//Confirmaciones con sweetalert2
 				Swal.fire({
 					icon: "success",
 					title: "Usuario actualizado",
@@ -99,6 +103,7 @@ export class UsersFormComponent {
 		}
 	}
 
+	//Funcion para valdaciones
 	checkControl(formControlName: string, validador: string): boolean | undefined {
 		return this.userForm.get(formControlName)?.hasError(validador) && this.userForm.get(formControlName)?.touched;
 	}

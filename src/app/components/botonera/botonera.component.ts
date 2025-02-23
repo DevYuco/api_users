@@ -18,6 +18,7 @@ export class BotoneraComponent {
 	@Input() parent: string = "";
 
 	deleteUser(id: number) {
+		//Confirmaciones con sweetalert2
 		Swal.fire({
 			title: "¿Estás seguro?",
 			text: "Esta acción eliminará al usuario definitivamente.",
